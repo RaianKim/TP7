@@ -1,3 +1,5 @@
+using System;
+using System.ComponentModel.DataAnnotations;
 namespace TP7.Models;
 
 public static class Juego
@@ -5,16 +7,16 @@ public static class Juego
     string _username
     int _puntajeActual
     int _cantidadPreguntasCorrectas
-    List<Pregunta> _preguntas
-    List<Respuesta> _respuestas
+    List<Preguntas> _preguntas
+    List<Respuestas> _respuestas
 
     static void InicializarJuego()
     {
-        username ="";
-        puntajeActual = 0;
-        cantidadPreguntasCorrectas = 0;
-        preguntas(new Preguntas{});
-        respuestas(new Respuestas{});
+        _username ="";
+        _puntajeActual = 0;
+        _cantidadPreguntasCorrectas = 0;
+        _preguntas(new Preguntas{});
+        _respuestas(new Respuestas{});
     }
     static List<Categorias> ObtenerCategorias()
     {
@@ -24,6 +26,7 @@ public static class Juego
     {
         return BD.ObtenerDificultades();
     }
+
     static void CargarPartida(string username, int dificultad, int categoria)
     {
         _username = username;
@@ -32,8 +35,40 @@ public static class Juego
     }
     static Preguntas ObtenerProximaPregunta()
     {
+        bool aux = True;
         List<int> aux = new List<int>();
         Random rnd = new Random();
-        Console.WriteLine(rnd.Next(10, 20))
+        while (aux != false)
+        {
+        int randomNumber = rnd.Next(0, _preguntas.Count());
+            if(_preguntas.Contains(randomNumber))
+            {
+                aux = true;
+            }
+            else
+            {
+                aux = false;
+            }
+        }
+        return _preguntas[aux]; 
+    }
+
+    static List<Respuestas> ObtenerProximasRespuestas(int idPregunta)
+    {
+        List<Respuestas> respuestas = new List<Respuestas>();
+        for (int i = 0; i < _respuestas.Count(); i++)
+        {
+            if(_preguntas[i].IdPregunta == idPregunta)
+            {
+                respuestas.Add(_respuestas[i]);
+            }
+        }
+        return respuestas;
+    }
+
+    static bool VerificarRespuesta(int idPregunta, int idRespuesta)
+    {
+        bool aux;
+
     }
 }

@@ -17,6 +17,7 @@ public static class BD
         }
         return ObtenerCategorias;
     }
+    
     public static List<Dificultades> ObtenerDificultades()
     {
         List<Dificultades> ObtenerDificultades = new List<Dificultades>();
