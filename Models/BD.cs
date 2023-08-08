@@ -31,9 +31,11 @@ public static class BD
     public static List<Preguntas> ObtenerPreguntas(int dificultad, int categoria)
     {
         List<Preguntas> ObtenerPreguntas = new List<Preguntas>();
-        string sql = "SELECT * FROM Preguntas WHERE IdDificultad = @pIdDificultad AND IdCategoria = @pIdCategoria";
+        string sql = "SELECT * FROM Preguntas";
         using(SqlConnection db = new SqlConnection(ConnectionString))
         {
+            if(dificultad != -1){sql += " WHERE IdDificultad = @pIdDificultad"}
+            if(categoria != -1){sql+=" AND IdCategoria = @pIdCategoria"}
             ObtenerPreguntas = db.Query<Preguntas>(sql, new { pIdDificultad = dificultad, pIdCategoria = categoria}).ToList();
         }
         return ObtenerPreguntas;

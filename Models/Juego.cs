@@ -7,8 +7,8 @@ public static class Juego
     string _username
     int _puntajeActual
     int _cantidadPreguntasCorrectas
-    List<Preguntas> _preguntas
-    List<Respuestas> _respuestas
+    List<Preguntas> _preguntas = new List<Preguntas>();
+    List<Respuestas> _respuestas = new List<Preguntas>();
 
     static void InicializarJuego()
     {
@@ -36,7 +36,6 @@ public static class Juego
     static Preguntas ObtenerProximaPregunta()
     {
         bool aux = True;
-        List<int> aux = new List<int>();
         Random rnd = new Random();
         while (aux != false)
         {
@@ -50,7 +49,7 @@ public static class Juego
                 aux = false;
             }
         }
-        return _preguntas[aux]; 
+        return _preguntas[randomNumber]; 
     }
 
     static List<Respuestas> ObtenerProximasRespuestas(int idPregunta)
@@ -68,7 +67,30 @@ public static class Juego
 
     static bool VerificarRespuesta(int idPregunta, int idRespuesta)
     {
-        bool aux;
-
+        Preguntas pregunta;
+        Respuestas respuesta;
+        for (int i = 0; i < _preguntas.Count(); i++)
+        {
+            if(_respuestas[i].idRespuesta == idRespuesta)
+            {
+                respuesta = respuestas[i];
+                break;
+            }
+        }
+        for (int i = 0; i < _preguntas.Count() ; i++)
+        {
+            if(_respuestas[i].idPregunta == idPregunta)
+            {
+                _preguntas.RemoveAt(i);
+                break;
+            }
+        }
+        if(respuesta.Correcta)
+        {
+            _cantidadPreguntasCorrectas++;
+            _puntajeActual += 184;
+            return true;
+        }
+        return false;
     }
 }
