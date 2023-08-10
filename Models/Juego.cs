@@ -7,8 +7,8 @@ public static class Juego
     private static string _username;
     private static int _puntajeActual;
     private static int _cantidadPreguntasCorrectas;
-    public static List<Preguntas> _preguntas = new List<Preguntas>();
-    public static List<Respuestas> _respuestas = new List<Respuestas>();
+    private static List<Preguntas> _preguntas = new List<Preguntas>();
+    private static List<Respuestas> _respuestas = new List<Respuestas>();
 
     public static void InicializarJuego()
     {
@@ -33,7 +33,6 @@ public static class Juego
         _preguntas = BD.ObtenerPreguntas(dificultad,categoria);
         _respuestas = BD.ObtenerRespuestas(_preguntas);
     }
-    public static List<Preguntas> preguntasRandom = new List<Preguntas>();
     public static Preguntas ObtenerProximaPregunta()
     {
         Random rnd = new Random();

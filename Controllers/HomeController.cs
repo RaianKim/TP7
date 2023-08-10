@@ -28,11 +28,15 @@ public IActionResult ConfigurarJuego()
 
 public IActionResult Comenzar(string username,int dificultad,int categoria)
 {
- Juego.CargarPartida(username,dificultad,categoria);   
- if(Juego._preguntas.Count > 0){
-    return View(CargarPartida);
- }else
- {return View(ConfigurarJuego);}
+ if(dificultad < -1 && dificultad == 0 && dificultad > 3 && categoria < -1 && categoria == 0 && categoria > 3)
+ {
+     return View("ConfigurarJuego");
+ }
+ else
+ {
+    return View("CargarPartida");
+    Juego.CargarPartida(username,dificultad,categoria);  
+ }
 }
 
 public IActionResult Jugar(){
@@ -43,8 +47,6 @@ return View(Jugar);
 }else{
     return View(Fin);
 }
-
-
 }
 
 [HttpPost]
