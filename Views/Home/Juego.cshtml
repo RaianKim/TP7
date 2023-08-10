@@ -1,0 +1,30 @@
+
+
+<p>Nombre de usuario: Juego._username</p>
+<p>Puntaje actual: Juego._puntajeActual</p>
+
+<p>Número de pregunta actual: @ViewBag.NumeroPregunta</p>
+<p>Enunciado: @ViewBag.Enunciado</p>
+
+<form action="/Controller/VerificarRespuesta" method="POST">
+    <input type="hidden" name="idPregunta" value="@ViewBag.IdPregunta" />
+
+    <h3>Respuestas:</h3>
+    <ul>
+        @foreach (var respuesta in ViewBag.Respuestas)
+        {
+            <li>
+                <label>
+                    <input type="radio" name="idRespuesta" value="@respuesta.Id" required />
+                    @respuesta.Texto
+                    @if (!string.IsNullOrEmpty(respuesta.ImagenUrl))
+                    {
+                        <img src="@respuesta.ImagenUrl" alt="Imagen de respuesta" />
+                    }
+                </label>
+            </li>
+        }
+    </ul>
+
+    <input type="submit" value="Responder" />
+</form>
