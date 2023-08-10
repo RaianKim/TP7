@@ -34,19 +34,23 @@ public IActionResult Comenzar(string username,int dificultad,int categoria)
  }
  else
  {
-    return View("CargarPartida");
+    
     Juego.CargarPartida(username,dificultad,categoria);  
+    return RedirectToAction("Jugar");
  }
 }
 
 public IActionResult Jugar(){
-    if (Juego._preguntas.Count > 0){
-ViewBag.Preguntas = Juego.ObtenerProximaPregunta();
-ViewBag.Respuestas = Juego.ObtenerProximasRespuestas(ViewBag.Preguntas.idPregunta);
-return View(Jugar);
-}else{
-    return View(Fin);
-}
+    if (Juego.ObtenerProximaPregunta == null)
+    {
+    return View("Fin");
+    }
+    else
+    {
+    ViewBag.Preguntas = Juego.ObtenerProximaPregunta();
+    ViewBag.Respuestas = Juego.ObtenerProximasRespuestas(ViewBag.Preguntas.idPregunta);
+    return View("Jugar");
+    }
 }
 
 [HttpPost]
@@ -57,7 +61,7 @@ public IActionResult VerificarRespuesta(int idPregunta, int idRespuesta){
 //int correcto = ObtenerRespuestaCorrecta(idPregunta)}
 //ViewBag.correcto = Correcto
 //  }
-return View(Respuestas);
+return View("Respuestas");
 }
 
 
