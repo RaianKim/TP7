@@ -4,9 +4,9 @@ namespace TP7.Models;
 
 public static class Juego
 {
-    string _username
-    int _puntajeActual
-    int _cantidadPreguntasCorrectas
+    string _username;
+    int _puntajeActual;
+    int _cantidadPreguntasCorrectas;
     List<Preguntas> _preguntas = new List<Preguntas>();
     List<Respuestas> _respuestas = new List<Preguntas>();
 
@@ -40,7 +40,7 @@ public static class Juego
         while (aux != false)
         {
         int randomNumber = rnd.Next(0, _preguntas.Count());
-            if(_preguntas.Contains(randomNumber))
+            if(_preguntas[randomNumber] == 0)
             {
                 aux = true;
             }
