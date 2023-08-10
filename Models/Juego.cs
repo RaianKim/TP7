@@ -4,19 +4,19 @@ namespace TP7.Models;
 
 public static class Juego
 {
-    string _username;
-    int _puntajeActual;
-    int _cantidadPreguntasCorrectas;
-    List<Preguntas> _preguntas = new List<Preguntas>();
-    List<Respuestas> _respuestas = new List<Preguntas>();
+    private static string _username;
+    private static int _puntajeActual;
+    private static int _cantidadPreguntasCorrectas;
+    private static List<Preguntas> _preguntas = new List<Preguntas>();
+    private static List<Respuestas> _respuestas = new List<Respuestas>();
 
     static void InicializarJuego()
     {
         _username ="";
         _puntajeActual = 0;
         _cantidadPreguntasCorrectas = 0;
-        _preguntas(new Preguntas{});
-        _respuestas(new Respuestas{});
+        _preguntas.Add(new Preguntas{});
+        _respuestas.Add(new Respuestas{});
     }
     static List<Categorias> ObtenerCategorias()
     {
@@ -33,22 +33,11 @@ public static class Juego
         _preguntas = BD.ObtenerPreguntas(dificultad,categoria);
         _respuestas = BD.ObtenerRespuestas(_preguntas);
     }
+    static List<Preguntas> preguntasRandom = new List<Preguntas>();
     static Preguntas ObtenerProximaPregunta()
     {
-        bool aux = True;
         Random rnd = new Random();
-        while (aux != false)
-        {
         int randomNumber = rnd.Next(0, _preguntas.Count());
-            if(_preguntas[randomNumber] == 0)
-            {
-                aux = true;
-            }
-            else
-            {
-                aux = false;
-            }
-        }
         return _preguntas[randomNumber]; 
     }
 
@@ -68,18 +57,18 @@ public static class Juego
     static bool VerificarRespuesta(int idPregunta, int idRespuesta)
     {
         Preguntas pregunta;
-        Respuestas respuesta;
+        Respuestas respuesta = new Respuestas();
         for (int i = 0; i < _preguntas.Count(); i++)
         {
-            if(_respuestas[i].idRespuesta == idRespuesta)
+            if(_respuestas[i].IdRespuesta == idRespuesta)
             {
-                respuesta = respuestas[i];
+                respuesta = _respuestas[i];
                 break;
             }
         }
         for (int i = 0; i < _preguntas.Count() ; i++)
         {
-            if(_respuestas[i].idPregunta == idPregunta)
+            if(_respuestas[i].IdPregunta == idPregunta)
             {
                 _preguntas.RemoveAt(i);
                 break;

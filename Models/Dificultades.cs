@@ -1,4 +1,4 @@
-namespace TP6.Models;
+namespace TP7.Models;
 
 public class Dificultades
 {
