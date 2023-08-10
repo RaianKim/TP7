@@ -7,10 +7,10 @@ public static class Juego
     private static string _username;
     private static int _puntajeActual;
     private static int _cantidadPreguntasCorrectas;
-    private static List<Preguntas> _preguntas = new List<Preguntas>();
-    private static List<Respuestas> _respuestas = new List<Respuestas>();
+    public static List<Preguntas> _preguntas = new List<Preguntas>();
+    public static List<Respuestas> _respuestas = new List<Respuestas>();
 
-    static void InicializarJuego()
+    public static void InicializarJuego()
     {
         _username ="";
         _puntajeActual = 0;
@@ -18,30 +18,30 @@ public static class Juego
         _preguntas.Add(new Preguntas{});
         _respuestas.Add(new Respuestas{});
     }
-    static List<Categorias> ObtenerCategorias()
+    public static List<Categorias> ObtenerCategorias()
     {
         return BD.ObtenerCategorias();
     }
-    static List<Dificultades> ObtenerDificultades()
+    public static List<Dificultades> ObtenerDificultades()
     {
         return BD.ObtenerDificultades();
     }
 
-    static void CargarPartida(string username, int dificultad, int categoria)
+    public static void CargarPartida(string username, int dificultad, int categoria)
     {
         _username = username;
         _preguntas = BD.ObtenerPreguntas(dificultad,categoria);
         _respuestas = BD.ObtenerRespuestas(_preguntas);
     }
-    static List<Preguntas> preguntasRandom = new List<Preguntas>();
-    static Preguntas ObtenerProximaPregunta()
+    public static List<Preguntas> preguntasRandom = new List<Preguntas>();
+    public static Preguntas ObtenerProximaPregunta()
     {
         Random rnd = new Random();
         int randomNumber = rnd.Next(0, _preguntas.Count());
         return _preguntas[randomNumber]; 
     }
 
-    static List<Respuestas> ObtenerProximasRespuestas(int idPregunta)
+    public static List<Respuestas> ObtenerProximasRespuestas(int idPregunta)
     {
         List<Respuestas> respuestas = new List<Respuestas>();
         for (int i = 0; i < _respuestas.Count(); i++)
@@ -54,7 +54,7 @@ public static class Juego
         return respuestas;
     }
 
-    static bool VerificarRespuesta(int idPregunta, int idRespuesta)
+    public static bool VerificarRespuesta(int idPregunta, int idRespuesta)
     {
         Preguntas pregunta;
         Respuestas respuesta = new Respuestas();

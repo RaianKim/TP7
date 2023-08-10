@@ -29,23 +29,33 @@ public IActionResult ConfigurarJuego()
 public IActionResult Comenzar(string username,int dificultad,int categoria)
 {
  Juego.CargarPartida(username,dificultad,categoria);   
- if(_preguntas.Count > 0){
-    return view(CargarPartida)
+ if(Juego._preguntas.Count > 0){
+    return View(CargarPartida);
  }else
- {return view(ConfigurarJuego)}
+ {return View(ConfigurarJuego);}
 }
 
 public IActionResult Jugar(){
+    if (Juego._preguntas.Count > 0){
+ViewBag.Preguntas = Juego.ObtenerProximaPregunta();
+ViewBag.Respuestas = Juego.ObtenerProximasRespuestas(ViewBag.Preguntas.idPregunta);
+return View(Jugar);
+}else{
+    return View(Fin);
+}
+
 
 }
 
-[HttpPost] public IActionResult VerificarRespuesta(int idPregunta, int idRespuesta){
-    bool Vericado = VerificarRespuesta(idPregunta,idRespuesta);
+[HttpPost]
+public IActionResult VerificarRespuesta(int idPregunta, int idRespuesta){
+    bool Vericado = Juego.VerificarRespuesta(idPregunta,idRespuesta);
     ViewBag.Vericado = Vericado;
-    if(!Vericado){
+ //   if(!Vericado){
 //int correcto = ObtenerRespuestaCorrecta(idPregunta)}
 //ViewBag.correcto = Correcto
-    }
+//  }
+return View(Respuestas);
 }
 
 
