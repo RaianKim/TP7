@@ -36,6 +36,8 @@ public IActionResult Comenzar(string username,int dificultad,int categoria)
  {
     
     Juego.CargarPartida(username,dificultad,categoria);  
+    ViewBag.username = username;
+    
     return RedirectToAction("Jugar");
  }
 }
@@ -49,7 +51,7 @@ public IActionResult Jugar(){
     {
     ViewBag.Preguntas = Juego.ObtenerProximaPregunta();
     ViewBag.Respuestas = Juego.ObtenerProximasRespuestas(ViewBag.Preguntas.idPregunta);
-    return View("Jugar");
+    return View("Juego");
     }
 }
 

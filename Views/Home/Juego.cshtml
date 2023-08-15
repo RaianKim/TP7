@@ -1,10 +1,10 @@
 
 
-<p>Nombre de usuario: Juego._username</p>
-<p>Puntaje actual: Juego._puntajeActual</p>
+<p>Nombre de usuario: @ViewBag.username</p>
+<p>Puntaje actual: @Juego._puntajeActual</p>
 
-<p>Número de pregunta actual: @ViewBag.NumeroPregunta</p>
-<p>Enunciado: @ViewBag.Enunciado</p>
+<p>Número de pregunta actual: @ViewBag.pregunta.IdPregunta</p>
+<p>Enunciado: @ViewBag.pregunta.Preguntas</p>
 
 <form action="/Controller/VerificarRespuesta" method="POST">
     <input type="hidden" name="idPregunta" value="@ViewBag.IdPregunta" />
