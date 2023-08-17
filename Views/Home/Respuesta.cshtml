@@ -1,0 +1,22 @@
+
+
+
+
+
+
+<body>
+    <div>
+        @if (ViewBag.Verificado)
+        {
+            <h1>¡Respuesta Correcta!</h1>
+        }
+        else
+        {
+            <h1>Respuesta Incorrecta</h1>
+            <p>La respuesta correcta era: @ViewBag.correcto</p>
+        }
+        <a href='@Url.Action("Siguiente Pregunta", "Jugar")'>Siguiente Pregunta</a>
+    </div>
+   
+</body>
+

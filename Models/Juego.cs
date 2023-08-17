@@ -9,6 +9,7 @@ public static class Juego
     private static int _cantidadPreguntasCorrectas;
     private static List<Preguntas> _preguntas = new List<Preguntas>();
     private static List<Respuestas> _respuestas = new List<Respuestas>();
+    private static Random _random = new Random();
 
     public static void InicializarJuego()
     {
@@ -35,9 +36,8 @@ public static class Juego
     }
     public static Preguntas ObtenerProximaPregunta()
     {
-        Random rnd = new Random();
-        int randomNumber = rnd.Next(0, _preguntas.Count());
-        return _preguntas[randomNumber]; 
+           int randomNumber = _random.Next(0, _preguntas.Count);
+          return (_preguntas[randomNumber]); 
     }
 
     public static List<Respuestas> ObtenerProximasRespuestas(int idPregunta)
