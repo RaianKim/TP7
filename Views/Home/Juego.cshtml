@@ -5,9 +5,10 @@
 
 
 <p>Número de pregunta actual: @ViewBag.Preguntas.IdPregunta</p>
-<p>Enunciado: @ViewBag.Preguntas</p>
 
-<form action="/Controller/VerificarRespuesta" method="POST">
+<p>Enunciado: @ViewBag.Preguntas.Enunciado</p>
+
+<form action="VerificarRespuesta" method="POST">
     <input type="hidden" name="idPregunta" value="@ViewBag.IdPregunta" />
 
     <h3>Respuestas:</h3>
@@ -16,12 +17,12 @@
         {
             <li>
                 <label>
-                    <input type="radio" name="idRespuesta" value="@respuesta.Id" required />
-                    @respuesta.Texto
-                    @if (!string.IsNullOrEmpty(respuesta.ImagenUrl))
-                    {
-                        <img src="@respuesta.ImagenUrl" alt="Imagen de respuesta" />
-                    }
+                 <input type="radio" name="idRespuesta" value="@respuesta.IdRespuesta" required />
+
+                 @respuesta.Contenido
+                 
+    
+                    
                 </label>
             </li>
         }

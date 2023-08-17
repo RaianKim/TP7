@@ -51,25 +51,33 @@ public IActionResult Jugar(){
     else
     {
     ViewBag.Preguntas = Juego.ObtenerProximaPregunta();
-    ViewBag.Respuestas = Juego.ObtenerProximasRespuestas(ViewBag.Preguntas.idPregunta);
+    ViewBag.Respuestas = Juego.ObtenerProximasRespuestas(ViewBag.Preguntas.IdPregunta);
     return View("Juego");
     }
 }
 
 [HttpPost]
-public IActionResult VerificarRespuesta(int idPregunta, int idRespuesta){
-    bool Vericado = Juego.VerificarRespuesta(idPregunta,idRespuesta);
-    ViewBag.Vericado = Vericado;
- //   if(!Vericado){
-//int correcto = ObtenerRespuestaCorrecta(idPregunta)}
-//ViewBag.correcto = Correcto
-//  }
-return View("Respuestas");
+public IActionResult VerificarRespuesta(int IdPregunta, int IdRespuesta)
+{
+    ViewBag.correcto = Juego.VerificarRespuesta(IdPregunta,IdRespuesta);
+    var a = Juego.ObtenerProximasRespuestas(IdPregunta);
+    foreach (var item in a)
+    {
+        if(item.Correcta)
+        {
+ViewBag.respuestaCorrecta  = item.Contenido;
+        }
+    }
+    return View("Respuesta");
 }
 
 
 
+
+
+
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+
     public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });

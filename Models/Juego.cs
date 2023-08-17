@@ -34,24 +34,32 @@ public static class Juego
         _preguntas = BD.ObtenerPreguntas(dificultad,categoria);
         _respuestas = BD.ObtenerRespuestas(_preguntas);
     }
-    public static Preguntas ObtenerProximaPregunta()
+   public static Preguntas ObtenerProximaPregunta()
+{
+    if (_preguntas.Count == 0)
     {
-           int randomNumber = _random.Next(0, _preguntas.Count);
-          return (_preguntas[randomNumber]); 
+        return null; 
     }
+    
+    int randomNumber = _random.Next(0, _preguntas.Count);
+    Preguntas pregunta = _preguntas[randomNumber];
+    _preguntas.RemoveAt(randomNumber); 
+    return pregunta;
+}
 
-    public static List<Respuestas> ObtenerProximasRespuestas(int idPregunta)
+public static List<Respuestas> ObtenerProximasRespuestas(int idPregunta)
+{
+    List<Respuestas> respuestas = new List<Respuestas>();
+    foreach (var respuesta in _respuestas)
     {
-        List<Respuestas> respuestas = new List<Respuestas>();
-        for (int i = 0; i < _respuestas.Count(); i++)
+        if (respuesta.IdPregunta == idPregunta)
         {
-            if(_preguntas[i].IdPregunta == idPregunta)
-            {
-                respuestas.Add(_respuestas[i]);
-            }
+            respuestas.Add(respuesta);
         }
-        return respuestas;
     }
+    return respuestas;
+}
+
 
     public static bool VerificarRespuesta(int idPregunta, int idRespuesta)
     {

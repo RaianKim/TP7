@@ -1,22 +1,14 @@
 
 
-
-
-
-
-<body>
-    <div>
-        @if (ViewBag.Verificado)
-        {
-            <h1>¡Respuesta Correcta!</h1>
-        }
-        else
-        {
-            <h1>Respuesta Incorrecta</h1>
-            <p>La respuesta correcta era: @ViewBag.correcto</p>
-        }
-        <a href='@Url.Action("Siguiente Pregunta", "Jugar")'>Siguiente Pregunta</a>
-    </div>
+@if (ViewBag.correcto)
+{
+    ViewBag.respuestaCorrecta = "La respuesta es correcta.";
    
-</body>
+}
+else
+{
+    ViewBag.respuestaCorrecta = "Incorrecto"; 
+    <h3>@ViewBag.respuestaCorrecta</h3>
+}
+<a href='@Url.Action("Jugar")'><button>Proxima Pregunta</button></a>
 
