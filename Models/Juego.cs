@@ -10,7 +10,6 @@ public static class Juego
     private static List<Preguntas> _preguntas = new List<Preguntas>();
     private static List<Respuestas> _respuestas = new List<Respuestas>();
     private static Random _random = new Random();
-
     public static void InicializarJuego()
     {
         _username ="";
@@ -34,8 +33,11 @@ public static class Juego
         _preguntas = BD.ObtenerPreguntas(dificultad,categoria);
         _respuestas = BD.ObtenerRespuestas(_preguntas);
     }
+   
+   
    public static Preguntas ObtenerProximaPregunta()
 {
+    
     if (_preguntas.Count == 0)
     {
         return null; 
@@ -43,50 +45,52 @@ public static class Juego
     
     int randomNumber = _random.Next(0, _preguntas.Count);
     Preguntas pregunta = _preguntas[randomNumber];
-    _preguntas.RemoveAt(randomNumber); 
     return pregunta;
 }
 
 public static List<Respuestas> ObtenerProximasRespuestas(int idPregunta)
 {
     List<Respuestas> respuestas = new List<Respuestas>();
-    foreach (var respuesta in _respuestas)
+    foreach (Respuestas resp in _respuestas)
     {
-        if (respuesta.IdPregunta == idPregunta)
+        if (resp.IdPregunta == idPregunta)
         {
-            respuestas.Add(respuesta);
+            respuestas.Add(resp);
         }
     }
     return respuestas;
 }
 
-
-    public static bool VerificarRespuesta(int idPregunta, int idRespuesta)
+    
+    public static Respuestas VerificarRespuesta(int idPregunta, int idRespuesta)
     {
-        Preguntas pregunta;
-        Respuestas respuesta = new Respuestas();
-        for (int i = 0; i < _preguntas.Count(); i++)
+
+       Respuestas respuesta = new Respuestas();
+        for (int i = 0; i < _respuestas.Count();i++)
         {
-            if(_respuestas[i].IdRespuesta == idRespuesta)
+            if(_respuestas[i].IdRespuesta == idRespuesta && _respuestas[i].IdPregunta ==  idPregunta)
             {
                 respuesta = _respuestas[i];
                 break;
             }
         }
-        for (int i = 0; i < _preguntas.Count() ; i++)
+        for (int i = 0; i < _preguntas.Count(); i++)
         {
-            if(_respuestas[i].IdPregunta == idPregunta)
+            if(_preguntas[i].IdPregunta == idPregunta)
             {
                 _preguntas.RemoveAt(i);
-                break;
             }
         }
         if(respuesta.Correcta)
         {
             _cantidadPreguntasCorrectas++;
-            _puntajeActual += 184;
-            return true;
+            _puntajeActual += 150;
+            return respuesta;
         }
-        return false;
+        else
+        {
+            return respuesta;
+        }
+        
     }
 }

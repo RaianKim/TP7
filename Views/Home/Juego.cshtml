@@ -2,27 +2,20 @@
 
 <p>Nombre de usuario: @ViewBag.username</p>
 
-
-
 <p>Número de pregunta actual: @ViewBag.Preguntas.IdPregunta</p>
 
-<p>Enunciado: @ViewBag.Preguntas.Enunciado</p>
 
 <form action="VerificarRespuesta" method="POST">
-    <input type="hidden" name="idPregunta" value="@ViewBag.IdPregunta" />
-
+    <p>Enunciado: @ViewBag.Preguntas.Enunciado</p>
+    <input type="hidden" name="IdPregunta" value="@ViewBag.Preguntas.IdPregunta" />
     <h3>Respuestas:</h3>
     <ul>
-        @foreach (var respuesta in ViewBag.Respuestas)
+        @foreach (Respuestas respuesta in ViewBag.Respuestas)
         {
             <li>
                 <label>
-                 <input type="radio" name="idRespuesta" value="@respuesta.IdRespuesta" required />
-
+                 <input type="radio" id="IdRespuesta" name="IdRespuesta" value="@respuesta.IdRespuesta" required />
                  @respuesta.Contenido
-                 
-    
-                    
                 </label>
             </li>
         }

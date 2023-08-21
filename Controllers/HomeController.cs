@@ -44,13 +44,14 @@ public IActionResult Comenzar(string username,int dificultad,int categoria)
 }
 
 public IActionResult Jugar(){
-    if (Juego.ObtenerProximaPregunta == null)
+    
+    ViewBag.Preguntas = Juego.ObtenerProximaPregunta();
+    if (ViewBag.Preguntas == null )
     {
     return View("Fin");
     }
     else
     {
-    ViewBag.Preguntas = Juego.ObtenerProximaPregunta();
     ViewBag.Respuestas = Juego.ObtenerProximasRespuestas(ViewBag.Preguntas.IdPregunta);
     return View("Juego");
     }
@@ -59,21 +60,9 @@ public IActionResult Jugar(){
 [HttpPost]
 public IActionResult VerificarRespuesta(int IdPregunta, int IdRespuesta)
 {
-    ViewBag.correcto = Juego.VerificarRespuesta(IdPregunta,IdRespuesta);
-    var a = Juego.ObtenerProximasRespuestas(IdPregunta);
-    foreach (var item in a)
-    {
-        if(item.Correcta)
-        {
-ViewBag.respuestaCorrecta  = item.Contenido;
-        }
-    }
+    ViewBag.Correcto = Juego.VerificarRespuesta(IdPregunta,IdRespuesta);
     return View("Respuesta");
 }
-
-
-
-
 
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

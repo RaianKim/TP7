@@ -1,14 +1,13 @@
 
-
-@if (ViewBag.correcto)
+@if ( ViewBag.Correcto.Correcta)
 {
     ViewBag.respuestaCorrecta = "La respuesta es correcta.";
-   
 }
 else
 {
     ViewBag.respuestaCorrecta = "Incorrecto"; 
-    <h3>@ViewBag.respuestaCorrecta</h3>
+    
 }
+<h3>@ViewBag.respuestaCorrecta</h3>
 <a href='@Url.Action("Jugar")'><button>Proxima Pregunta</button></a>
 
