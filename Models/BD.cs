@@ -8,7 +8,7 @@ public static class BD
     private static string ConnectionString = @"Server=localhost; DataBase=PreguntadOrt; Trusted_Connection=True";
 
     public static List<Categorias> ObtenerCategorias()
-    {
+    {   
         List<Categorias> ObtenerCategorias = new List<Categorias>();
         string sql = "SELECT * FROM Categorias";
         using(SqlConnection db = new SqlConnection(ConnectionString))
