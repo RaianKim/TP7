@@ -2,18 +2,20 @@
 <label for="dificultad">Dificultad:</label>
     <select name="dificultad" id="dificultad" required>
         <option value="-1">Todas</option>
-        <option value="1">Facil</option>
-        <option value="2">Medio</option>
-        <option value="3">Dificil</option>
+
+        @foreach (var dificultad in ViewBag.Dificultades)
+        {
+                        <option value="@dificultad.IdDificultad">@dificultad.Nombre</option>
+        }
+
 </select>
 
 <select name="categoria" id="categoria" required>
         <option value="-1">Todas</option>
-        <option value="1">Deportes</option>
-        <option value="2">Arte</option>
-        <option value="3">Historia</option>
-        <option value="4">Geografia</option>
-        <option value="7">Ciencias</option>
+              @foreach (var categoria in ViewBag.Categorias)
+        {
+                        <option value="@categoria.IdCategoria">@categoria.Nombre</option>
+        }
 </select>
 
  <label for="username">Username:</label>

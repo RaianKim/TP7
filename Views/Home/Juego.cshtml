@@ -8,7 +8,7 @@
 <form action="VerificarRespuesta" method="POST">
     <p>Enunciado: @ViewBag.Preguntas.Enunciado</p>
     <input type="hidden" name="IdPregunta" value="@ViewBag.Preguntas.IdPregunta" />
-    <h3>Respuestas:</h3>
+    <h3>Respuestas: @ViewBag.puntaje</h3>
     <ul>
         @foreach (Respuestas respuesta in ViewBag.Respuestas)
         {

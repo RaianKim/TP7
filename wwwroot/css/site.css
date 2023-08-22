@@ -29,3 +29,22 @@ li
 {
   list-style: none;
 }
+
+
+h1{
+text-align: center;
+}
+.botonJugar{
+display: flex;
+justify-content: center;
+}
+
+.Index
+{
+text-align: center;
+}
+
+.imgIndex
+{
+width: 300px;
+}
