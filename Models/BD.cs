@@ -38,7 +38,11 @@ public static class BD
             {
                 sql += " WHERE IdDificultad = @pIdDificultad";
             }
-            if(categoria != -1)
+            if(dificultad == -1 && categoria != -1)
+            {
+                sql+=" WHERE IdCategoria = @pIdCategoria";
+            }
+            else
             {
                 sql+=" AND IdCategoria = @pIdCategoria";
             }
