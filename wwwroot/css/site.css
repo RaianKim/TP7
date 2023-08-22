@@ -29,11 +29,7 @@ li
 {
   list-style: none;
 }
-main{
-  width: 80%;
-  margin: 0 auto;
-  padding: 0 5%;
-}
+
 
 h1{
 text-align: center;
@@ -41,4 +37,14 @@ text-align: center;
 .botonJugar{
 display: flex;
 justify-content: center;
+}
+
+.Index
+{
+text-align: center;
+}
+
+.imgIndex
+{
+width: 300px;
 }
