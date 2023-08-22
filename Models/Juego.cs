@@ -5,7 +5,7 @@ namespace TP7.Models;
 public static class Juego
 {
     private static string _username;
-    private static int _puntajeActual;
+    public static int _puntajeActual;
     private static int _cantidadPreguntasCorrectas;
     private static List<Preguntas> _preguntas = new List<Preguntas>();
     private static List<Respuestas> _respuestas = new List<Respuestas>();

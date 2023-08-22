@@ -53,6 +53,7 @@ public IActionResult Jugar(){
     else
     {
     ViewBag.Respuestas = Juego.ObtenerProximasRespuestas(ViewBag.Preguntas.IdPregunta);
+    ViewBag.puntaje = Juego._puntajeActual;
     return View("Juego");
     }
 }
