@@ -24,3 +24,8 @@ body {
 .LogoLayout {
   width: 100px; 
 }
+
+li
+{
+  list-style: none;
+}
