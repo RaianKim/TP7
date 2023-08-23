@@ -46,6 +46,18 @@ button.accept-policy {
   white-space: nowrap;
   line-height: 60px;
 }
+.miColor {
+  border: 5px solid #ffffff;
+  background-color: #fbe4e3; 
+  color: white;
+  transition-duration: 0.4s;
+}
+
+.miColor:hover {
+  border: 5px solid #ffffff;
+  background-color: #ffffff; 
+  color: #fbe4e3; 
+}
 
 
 

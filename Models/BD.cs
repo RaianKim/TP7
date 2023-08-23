@@ -37,14 +37,14 @@ public static class BD
             if(dificultad != -1)
             {
                 sql += " WHERE IdDificultad = @pIdDificultad";
+                if(categoria != -1)
+                {
+                    sql += " AND IdCategoria = @pIdCategoria";
+                }
             }
-            if(dificultad == -1 && categoria != -1)
+            if(dificultad == -1 && categoria != -1 )
             {
-                sql+=" WHERE IdCategoria = @pIdCategoria";
-            }
-            else
-            {
-                sql+=" AND IdCategoria = @pIdCategoria";
+                sql += " WHERE IdCategoria = @pIdCategoria";
             }
             ObtenerPreguntas = db.Query<Preguntas>(sql, new { pIdDificultad = dificultad, pIdCategoria = categoria}).ToList();
         }

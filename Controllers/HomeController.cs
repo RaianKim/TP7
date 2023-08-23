@@ -23,7 +23,7 @@ public IActionResult ConfigurarJuego()
     ViewBag.Categorias = BD.ObtenerCategorias();
     ViewBag.Dificultades = BD.ObtenerDificultades();
     Juego.InicializarJuego();
-    return  View();
+    return  View("ConfigurarJuego");
 }
 
 public IActionResult Comenzar(string username,int dificultad,int categoria)
