@@ -240,9 +240,9 @@ INSERT [dbo].[Respuestas] ([IdRespuesta], [IdPregunta], [Opcion], [Contenido], [
 INSERT [dbo].[Respuestas] ([IdRespuesta], [IdPregunta], [Opcion], [Contenido], [Correcta]) VALUES (145, 9, 4, N'1950', 0)
 INSERT [dbo].[Respuestas] ([IdRespuesta], [IdPregunta], [Opcion], [Contenido], [Correcta]) VALUES (25, 3, 2, N'La invasión de Polonia por parte de la Alemania nazi', 1)
 INSERT [dbo].[Respuestas] ([IdRespuesta], [IdPregunta], [Opcion], [Contenido], [Correcta]) VALUES (26, 3, 1, N'El bombardeo de Pearl Harbor por parte de la Alemania nazi', 0)
-INSERT [dbo].[Respuestas] ([IdRespuesta], [IdPregunta], [Opcion], [Contenido], [Correcta]) VALUES (27, 3, 3, N'El ataque a la Unión Soviética',
+INSERT [dbo].[Respuestas] ([IdRespuesta], [IdPregunta], [Opcion], [Contenido], [Correcta]) VALUES (27, 3, 3, N'El ataque a la Unión Soviética',0)
 INSERT [dbo].[Respuestas] ([IdRespuesta], [IdPregunta], [Opcion], [Contenido], [Correcta]) VALUES (146, 3, 4, N'La crisis de 1930', 0)
-INSERT [dbo].[Respuestas] ([IdRespuesta], [IdPregunta], [Opcion], [Contenido], [Correcta]) VALUES (28, 10, 1, N'Fútbol', 0)
+INSERT [dbo].[Respuestas] ([IdRespuesta], [IdPregunta], [Opcion], [Contenido], [Correcta]) VALUES (28, 10, 1, N'Fútbol', 0) 
 INSERT [dbo].[Respuestas] ([IdRespuesta], [IdPregunta], [Opcion], [Contenido], [Correcta]) VALUES (29, 10, 2, N'Tenis', 0)
 INSERT [dbo].[Respuestas] ([IdRespuesta], [IdPregunta], [Opcion], [Contenido], [Correcta]) VALUES (30, 10, 3, N'Golf', 1)
 INSERT [dbo].[Respuestas] ([IdRespuesta], [IdPregunta], [Opcion], [Contenido], [Correcta]) VALUES (147, 10, 4, N'Ping Pong', 0)
@@ -338,7 +338,6 @@ INSERT [dbo].[Respuestas] ([IdRespuesta], [IdPregunta], [Opcion], [Contenido], [
 INSERT [dbo].[Respuestas] ([IdRespuesta], [IdPregunta], [Opcion], [Contenido], [Correcta]) VALUES (100, 33, 2, N'India', 1)
 INSERT [dbo].[Respuestas] ([IdRespuesta], [IdPregunta], [Opcion], [Contenido], [Correcta]) VALUES (101, 33, 3, N'Estados Unidos', 0)
 INSERT [dbo].[Respuestas] ([IdRespuesta], [IdPregunta], [Opcion], [Contenido], [Correcta]) VALUES (171, 33, 4, N'Rusia', 0)
-GO
 INSERT [dbo].[Respuestas] ([IdRespuesta], [IdPregunta], [Opcion], [Contenido], [Correcta]) VALUES (102, 34, 1, N'La Depresión Challenger', 1)
 INSERT [dbo].[Respuestas] ([IdRespuesta], [IdPregunta], [Opcion], [Contenido], [Correcta]) VALUES (103, 34, 2, N'Valle de la Muerte', 0)
 INSERT [dbo].[Respuestas] ([IdRespuesta], [IdPregunta], [Opcion], [Contenido], [Correcta]) VALUES (104, 34, 3, N'Lago Assal', 0)
@@ -361,8 +360,8 @@ INSERT [dbo].[Respuestas] ([IdRespuesta], [IdPregunta], [Opcion], [Contenido], [
 INSERT [dbo].[Respuestas] ([IdRespuesta], [IdPregunta], [Opcion], [Contenido], [Correcta]) VALUES (176, 38, 4, N'Hidrogeno', 0)
 INSERT [dbo].[Respuestas] ([IdRespuesta], [IdPregunta], [Opcion], [Contenido], [Correcta]) VALUES (117, 39, 1, N'El ADN (ácido desoxirribonucleico) es una molécula presente en todos los seres vivos que contiene la información genética que determina las características de cada individuo.', 1)
 INSERT [dbo].[Respuestas] ([IdRespuesta], [IdPregunta], [Opcion], [Contenido], [Correcta]) VALUES (118, 39, 2, N'El ADN es una proteína presente en todos los seres vivos que tiene la función de catalizar reacciones químicas en el organismo.', 0)
-INSERT [dbo].[Respuestas] ([IdRespuesta], [IdPregunta], [Opcion], [Contenido], [Correcta]) VALUES (177, 39, 4, N'El ADN es una helice genetica cuya funcion es transportar particulas de materia muerta', 0)I
-NSERT [dbo].[Respuestas] ([IdRespuesta], [IdPregunta], [Opcion], [Contenido], [Correcta]) VALUES (119, 39, 3, N'El ADN es una célula presente en todos los seres vivos que tiene la función de transportar oxígeno a las células del cuerpo.', 0)
+INSERT [dbo].[Respuestas] ([IdRespuesta], [IdPregunta], [Opcion], [Contenido], [Correcta]) VALUES (177, 39, 4, N'El ADN es una helice genetica cuya funcion es transportar particulas de materia muerta', 0)
+INSERT [dbo].[Respuestas] ([IdRespuesta], [IdPregunta], [Opcion], [Contenido], [Correcta]) VALUES (119, 39, 3, N'El ADN es una célula presente en todos los seres vivos que tiene la función de transportar oxígeno a las células del cuerpo.', 0)
 INSERT [dbo].[Respuestas] ([IdRespuesta], [IdPregunta], [Opcion], [Contenido], [Correcta]) VALUES (120, 40, 1, N'La teoría de la evolución de Darwin es una explicación científica que postula que todas las especies de seres vivos evolucionaron a partir de un ancestro común a lo largo de millones de años, y que la selección natural es el mecanismo que impulsa este proceso de cambio.', 1)
 INSERT [dbo].[Respuestas] ([IdRespuesta], [IdPregunta], [Opcion], [Contenido], [Correcta]) VALUES (121, 40, 2, N'La teoría de la evolución de Darwin es una explicación científica que postula que todas las especies de seres vivos fueron creadas por un ser divino en un momento determinado.', 0)
 INSERT [dbo].[Respuestas] ([IdRespuesta], [IdPregunta], [Opcion], [Contenido], [Correcta]) VALUES (122, 40, 3, N'La teoría de la evolución de Darwin es una explicación científica que postula que todas las especies de seres vivos evolucionaron al mismo tiempo y en el mismo lugar.', 0)
@@ -387,6 +386,8 @@ INSERT [dbo].[Respuestas] ([IdRespuesta], [IdPregunta], [Opcion], [Contenido], [
 INSERT [dbo].[Respuestas] ([IdRespuesta], [IdPregunta], [Opcion], [Contenido], [Correcta]) VALUES (136, 45, 2, N'La tabla periódica es una herramienta matemática que se utiliza para resolver ecuaciones diferenciales y otros problemas matemáticos complejos.', 0)
 INSERT [dbo].[Respuestas] ([IdRespuesta], [IdPregunta], [Opcion], [Contenido], [Correcta]) VALUES (137, 45, 3, N'La tabla periódica es una herramienta literaria que se utiliza para analizar la estructura y los temas de las obras literarias.', 0)
 INSERT [dbo].[Respuestas] ([IdRespuesta], [IdPregunta], [Opcion], [Contenido], [Correcta]) VALUES (183, 45, 4, N'La tabla periódica es un traductor avanzado que es normalmente utilizado por extrangeros para poder comunicarse libremente con nativos', 0)
+GO
+GO
 SET IDENTITY_INSERT [dbo].[Respuestas] OFF
 GO
 ALTER TABLE [dbo].[Preguntas]  WITH CHECK ADD  CONSTRAINT [FK_Preguntas_Categorias] FOREIGN KEY([IdCategoria])
