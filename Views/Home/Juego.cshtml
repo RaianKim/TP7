@@ -8,7 +8,7 @@
 <form action="VerificarRespuesta" method="POST">
     <p>Enunciado: @ViewBag.Preguntas.Enunciado</p>
     <input type="hidden" name="IdPregunta" value="@ViewBag.Preguntas.IdPregunta" />
-    <h3>Respuestas: @ViewBag.puntaje</h3>
+    <h3>Puntaje: @ViewBag.puntaje</h3>
     <ul>
         @foreach (Respuestas respuesta in ViewBag.Respuestas)
         {
@@ -16,6 +16,8 @@
                 <label>
                  <input type="radio" id="IdRespuesta" name="IdRespuesta" value="@respuesta.IdRespuesta" required />
                  @respuesta.Contenido
+                 @respuesta.Correcta
+                 @respuesta.IdPregunta
                 </label>
             </li>
         }

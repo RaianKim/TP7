@@ -36,14 +36,12 @@ public IActionResult Comenzar(string username,int dificultad,int categoria)
  {
     
     Juego.CargarPartida(username,dificultad,categoria);  
-    ViewBag.username = username;
-   
-    
     return RedirectToAction("Jugar");
  }
 }
 
 public IActionResult Jugar(){
+    
     
     ViewBag.Preguntas = Juego.ObtenerProximaPregunta();
     if (ViewBag.Preguntas == null )
@@ -52,8 +50,9 @@ public IActionResult Jugar(){
     }
     else
     {
+    ViewBag.username = Juego._username;
     ViewBag.Respuestas = Juego.ObtenerProximasRespuestas(ViewBag.Preguntas.IdPregunta);
-    ViewBag.puntaje = Juego._puntajeActual;
+    ViewBag.puntaje = Juego._puntajeFinal;
     return View("Juego");
     }
 }

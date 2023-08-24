@@ -4,12 +4,13 @@ namespace TP7.Models;
 
 public static class Juego
 {
-    private static string _username;
-    public static int _puntajeActual;
+    public static string _username;
+    private static int _puntajeActual;
     private static int _cantidadPreguntasCorrectas;
     private static List<Preguntas> _preguntas = new List<Preguntas>();
     private static List<Respuestas> _respuestas = new List<Respuestas>();
     private static Random _random = new Random();
+    public static int _puntajeFinal;
     public static void InicializarJuego()
     {
         _username ="";
@@ -85,6 +86,7 @@ public static List<Respuestas> ObtenerProximasRespuestas(int idPregunta)
         {
             _cantidadPreguntasCorrectas++;
             _puntajeActual += 150;
+            _puntajeFinal = _puntajeActual;
             return respuesta;
         }
         else
