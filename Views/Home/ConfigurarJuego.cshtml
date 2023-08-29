@@ -19,15 +19,15 @@
                                         </label>
                                 @foreach (Dificultades dificultad in ViewBag.Dificultades)
                                 {
-                                        <label class="btn btn-primary btn-lg botonesss">
-                                        <input type="radio" id="categoria" value="@dificultad.IdDificultad" required>
+                                        <label class="btn btn-primary btn-lg  botonesss">
+                                        <input type="radio" name="dificultad"  id="dificultad" value="@dificultad.IdDificultad" required>
                                         <p>@dificultad.Nombre</p>
                                         </label>
                                 }
-                                </div>
-                                </div>  
-                                <div class="btn-group" data-toggle="buttons">
-                                <div class="row">
+                            </div>
+                          </div>  
+                            <div class="btn-group" data-toggle="buttons">
+                              <div class="row">
                                 <label >Categoria:</label>
                                         <label class="btn btn-primary btn-lg botonesss">
                                         <input type="radio" name="dificultad" id="dificultad" value="-1" required>
@@ -36,18 +36,17 @@
                                 @foreach (Categorias categoria in ViewBag.Categorias)
                                 {
                                         <label class="btn btn-primary btn-lg botonesss">
-                                        <input type="radio" id="dificultad" value="@categoria.IdCategoria" required>
-                                        <p>@categoria.IdCategoria</p>
+                                        <input type="radio" name="categoria" id="categoria" value="@categoria.IdCategoria" required>
                                         <img src="@categoria.Foto" alt="">
                                         </label>
                                 }
-                                </div>
-                                </div>
+                              </div>
                             </div>
+                        </div>
                          <label for="username">Username:</label>
                          <input type="text" name="username" id="username" required/>
                     <div class="text-center mt-3">
-                        <input type="submit" value="Enviar">
+                        <button type="submit" class="btn btn-primary" >Enviar</button>
                     </div>
                 </form>
             </div>
