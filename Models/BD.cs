@@ -5,7 +5,7 @@ using Dapper;
 namespace TP7.Models;
 public static class BD
 {
-    private static string ConnectionString = @"Server=DESKTOP-E3OHN6P\SQLEXPRESS01; DataBase=PreguntadOrt; Trusted_Connection=True";
+    private static string ConnectionString = @"localhost; DataBase=PreguntadOrt; Trusted_Connection=True";
 
     public static List<Categorias> ObtenerCategorias()
     {
