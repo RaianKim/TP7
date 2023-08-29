@@ -34,17 +34,48 @@ li
 h1{
 text-align: center;
 }
-.botonJugar{
-display: flex;
-justify-content: center;
-}
 
 .Index
 {
 text-align: center;
 }
-
-.imgIndex
+.imgIndex {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  width: 300px;
+}
+.IndexBack
 {
-width: 300px;
+  background:url(/img/ImagenLogoBackround.png);
+  background-size:cover;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(18px);
+  height: 100vh;
+}
+
+.indexitems
+{
+  display: flex;
+  align-items: center;
+  height: 83vh;
+  justify-content: center;
+}
+.indexcontainer
+{
+  display: flex;
+  justify-content: center;
+}
+.botonesss {
+  width: auto !important;
+  min-width: 250px !important;
+  min-width: 350px !important;
+  font-size: 18px !important;
+  text-align: center;
+}
+
+.botonesss.active {
+  background-color: #17a2b8; 
+  color: white;
+  border-color: #17a2b8;
 }
