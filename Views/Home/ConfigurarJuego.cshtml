@@ -7,38 +7,52 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   </head>
   <body>
-
             <div class="mb-3">
-                <form action="Comenzar" method="post">
+                <form method="post" action='@Url.Action("Comenzar")'>
                     <div class="text-center">
                         <div class="btn-group" data-toggle="buttons">
                             <div class="row">
                                 <label >Dificultad:</label>
+                                        <label class="btn btn-primary btn-lg botonesss">
+                                        <input type="radio" name="categoria" id="categoria" value="-1" required>
+                                        <p>Todas las dificultades</p>
+                                        </label>
                                 @foreach (Dificultades dificultad in ViewBag.Dificultades)
                                 {
                                         <label class="btn btn-primary btn-lg botonesss">
-                                        <input type="radio" name="opcion" value="@dificultad.IdDificultad" required>
+                                        <input type="radio" id="categoria" value="@dificultad.IdDificultad" required>
                                         <p>@dificultad.Nombre</p>
                                         </label>
                                 }
+                                </div>
+                                </div>  
+                                <div class="btn-group" data-toggle="buttons">
+                                <div class="row">
                                 <label >Categoria:</label>
+                                        <label class="btn btn-primary btn-lg botonesss">
+                                        <input type="radio" name="dificultad" id="dificultad" value="-1" required>
+                                        <p>Todas las categorias</p>
+                                        </label>
                                 @foreach (Categorias categoria in ViewBag.Categorias)
                                 {
                                         <label class="btn btn-primary btn-lg botonesss">
-                                        <input type="radio" name="opcion" value="@categoria.IdCategoria" required>
+                                        <input type="radio" id="dificultad" value="@categoria.IdCategoria" required>
+                                        <p>@categoria.IdCategoria</p>
                                         <img src="@categoria.Foto" alt="">
                                         </label>
                                 }
+                                </div>
+                                </div>
                             </div>
-                        </div>
                          <label for="username">Username:</label>
-                         <input type="text" name="username" id="username" required />
-                    </div>
+                         <input type="text" name="username" id="username" required/>
                     <div class="text-center mt-3">
-                        <button type="submit" class="btn btn-success" formaction="Respuesta.html">Responder</button>
+                        <input type="submit" value="Enviar">
                     </div>
                 </form>
             </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
   </body>
 </html>
+@*
+*@
