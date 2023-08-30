@@ -68,11 +68,11 @@ text-align: center;
 }
 .botonesss {
   width: auto !important;
-  min-width: 250px !important;
-  min-width: 350px !important;
+  min-width: 300px !important;
   font-size: 18px !important;
   text-align: center !important;
   background-color: rgb(247, 181, 161)!important;
+  vertical-align: middle !important;
   transition-duration: 0.6s!important;
 }
 
@@ -80,4 +80,42 @@ text-align: center;
   background-color: rgb(253, 159, 130) !important; 
   color: white !important;
   border-color: #17a2b8 !important;
+}
+.BackP
+{
+  background-color: #fbe4e3; 
+}
+.container-perso
+{
+  display: flex !important;
+  justify-content: center!important;
+  text-align: center!important;
+  align-content: center!important;
+  flex-direction: column!important;
+}
+.botoness {
+  width: auto !important;
+  min-width: 327.25px !important;
+  min-height: 275px !important;
+  font-size: 18px !important;
+  text-align: center !important;
+  vertical-align: middle !important;
+  background-color: rgb(247, 181, 161)!important;
+  transition-duration: 0.6s!important;
+}
+
+.botoness:hover {
+  background-color: rgb(253, 159, 130) !important; 
+  color: white !important;
+  border-color: #17a2b8 !important;
+}
+input[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Establecer un fondo cuando el radio esté seleccionado */
+input[type="radio"]:checked {
+  background-color: #ff3300 !important; /* Cambia el color de fondo cuando el radio está seleccionado */
 }

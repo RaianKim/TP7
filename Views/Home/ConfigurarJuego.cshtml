@@ -4,52 +4,65 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Configurar juego</title>
+    <link rel="stylesheet" href="/wwwroot/css/site.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   </head>
   <body>
+    <div class="container container-perso">
             <div class="mb-3">
                 <form method="post" action='@Url.Action("Comenzar")'>
                     <div class="text-center">
-                        <div class="btn-group" data-toggle="buttons">
-                            <div class="row">
-                                <label >Dificultad:</label>
-                                        <label class="btn btn-primary btn-lg botonesss">
-                                        <input type="radio" name="categoria" id="categoria" value="-1" required>
-                                        <p>Todas las dificultades</p>
-                                        </label>
+                        <div class="col">
+                          <p class="BackP">Dificultad:</p>
+                            <div class="btn-group mb-3" data-toggle="buttons">
+
+                                  <label class="btn btn-primary btn-lg botonesss">
+                                  <input type="radio" name="dificultad" id="dificultad" value="-1" required>
+                                   <p>Todas las dificultades</p>
+                                  </label>
+                            </div>
                                 @foreach (Dificultades dificultad in ViewBag.Dificultades)
                                 {
-                                        <label class="btn btn-primary btn-lg  botonesss">
+                                  <div class="btn-group mb-3" data-toggle="buttons">
+
+                                      <label class="btn btn-primary btn-lg  botonesss">
                                         <input type="radio" name="dificultad"  id="dificultad" value="@dificultad.IdDificultad" required>
                                         <p>@dificultad.Nombre</p>
-                                        </label>
+                                      </label>
+                                 </div>  
                                 }
-                            </div>
-                          </div>  
-                            <div class="btn-group" data-toggle="buttons">
+                        </div> 
+                          <p class="BackP">Categoria:</p>
+                            <div class="btn btn-group " data-toggle="buttons">
                               <div class="row">
-                                <label >Categoria:</label>
-                                        <label class="btn btn-primary btn-lg botonesss">
-                                        <input type="radio" name="dificultad" id="dificultad" value="-1" required>
+
+                                    <label class="btn btn-primary btn-lg botoness">
+                                      <input type="radio" name="categoria" id="categoria" value="-1" required>
                                         <p>Todas las categorias</p>
-                                        </label>
-                                @foreach (Categorias categoria in ViewBag.Categorias)
-                                {
-                                        <label class="btn btn-primary btn-lg botonesss">
-                                        <input type="radio" name="categoria" id="categoria" value="@categoria.IdCategoria" required>
-                                        <img src="@categoria.Foto" alt="">
-                                        </label>
-                                }
+                                    </label>
                               </div>
                             </div>
+                                @foreach (Categorias categoria in ViewBag.Categorias)
+                                {
+                                 <div class="btn btn-group " data-toggle="buttons">
+                                  <div class="row">
+                                      <label class="btn btn-primary btn-lg botonesss">
+                                      <input type="radio" name="categoria" id="categoria" value="@categoria.IdCategoria" required>
+                                      <img src="@categoria.Foto" alt="">
+                                      </label>
+                                 </div>
+                                </div>
+                                }
+
                         </div>
-                         <label for="username">Username:</label>
+                        <p class="BackP">Username:</p>
                          <input type="text" name="username" id="username" required/>
-                    <div class="text-center mt-3">
+                      <div class="text-center mt-2">
                         <button type="submit" class="btn btn-primary" >Enviar</button>
                     </div>
                 </form>
             </div>
+      </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
   </body>
 </html>
