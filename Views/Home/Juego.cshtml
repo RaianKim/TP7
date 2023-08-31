@@ -1,24 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="mod.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Juego</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  </head>
+  <body class="Back">
 
+<div class="mt-8">
+    <div class="container ">
+        <main >
+            <div class="mb-3">
+               
+                <div class="float-start">
+                    <p>Nombre de usuario: @ViewBag.username</p>
+                </div>
+         
+                <div class="float-end">
+                    <p>Puntaje actual: @ViewBag.puntaje</p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            
+            <div class="mb-3">
+                <div class="preguntaJuego">
+        
+                <h3>Pregunta 1</h3>
+                <p>@ViewBag.Preguntas.Enunciado</p>
+            </div>
+            </div>
+            
+            <div class="mb-3">
+                <form action="VerificarRespuesta" method="post">
+                    <input type="hidden" name="IdPregunta" value="@ViewBag.Preguntas.IdPregunta" />
+                    <div class="text-center">
+                        <div class="btn-group" data-toggle="buttons">
+                            <div class="row">
 
-<p>Nombre de usuario: @ViewBag.username</p>
-
-<p>Número de pregunta actual: @ViewBag.Preguntas.IdPregunta</p>
-
-
-<form action="VerificarRespuesta" method="POST">
-    <p>Enunciado: @ViewBag.Preguntas.Enunciado</p>
-    <input type="hidden" name="IdPregunta" value="@ViewBag.Preguntas.IdPregunta" />
-    <h3>Puntaje: @ViewBag.puntaje</h3>
-    <ul>
         @foreach (Respuestas respuesta in ViewBag.Respuestas)
         {
-            <li>
-                <label>
-                 <input type="radio" id="IdRespuesta" name="IdRespuesta" value="@respuesta.IdRespuesta" required />
-                 @respuesta.Contenido
-                </label>
-            </li>
+
+             <div class="col-md-6 mt-3">
+                                    <label class="btn btn-primary btn-lg botonesss">
+                                           <input type="radio" id="IdRespuesta" name="IdRespuesta" value="@respuesta.IdRespuesta" required />
+                                        <p> @respuesta.Contenido</p>
+                                    </label>
+             </div>
+
+
+              
+                
+
         }
-    </ul>
-    <input type="submit" value="Responder" />
-</form>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-3">
+                        <button type="submit" class="btn btn-success">Responder</button>
+                    </div>
+                </form>
+            </div>
+            
+        </main>
+    </div>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+
