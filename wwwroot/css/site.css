@@ -102,6 +102,7 @@ text-align: center;
   vertical-align: middle !important;
   background-color: rgb(247, 181, 161)!important;
   transition-duration: 0.6s!important;
+  border: rosybrown !important;
 }
 
 .botoness:hover {
@@ -124,4 +125,17 @@ input[type="radio"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+}
+
+.botonesss2 {
+  height: 200px !important;
+  width: 600px !important;
+
+
+  font-size: 18px !important;
+  text-align: center !important;
+  background-color: rgb(247, 181, 161)!important;
+  vertical-align: middle !important;
+  transition-duration: 0.6s!important;
+  border: rosybrown !important;
 }
