@@ -109,13 +109,13 @@ text-align: center;
   color: white !important;
   border-color: #17a2b8 !important;
 }
-input[type="radio"] {
+.radioCJ {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
 }
 
-/* Establecer un fondo cuando el radio esté seleccionado */
-input[type="radio"]:checked {
-  background-color: #ff3300 !important; /* Cambia el color de fondo cuando el radio está seleccionado */
+
+.radioCJ:checked {
+  background-color: #ff3300 !important;
 }
