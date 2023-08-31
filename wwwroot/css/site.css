@@ -119,3 +119,9 @@ text-align: center;
 .radioCJ:checked {
   background-color: #ff3300 !important;
 }
+
+input[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
