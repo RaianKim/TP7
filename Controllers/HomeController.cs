@@ -40,20 +40,21 @@ public IActionResult Comenzar(string username,int dificultad,int categoria)
  }
 }
 
-public IActionResult Jugar(){
-    
-    
-    ViewBag.Preguntas = Juego.ObtenerProximaPregunta();
+public IActionResult Jugar(){    
+        
+        ViewBag.Preguntas = Juego.ObtenerProximaPregunta();
     if (ViewBag.Preguntas == null )
     {
-    return View("Fin");
+        ViewBag.username = Juego._username;
+        ViewBag.puntaje = Juego._puntajeFinal;
+        return View("Fin");
     }
     else
     {
-    ViewBag.username = Juego._username;
-    ViewBag.Respuestas = Juego.ObtenerProximasRespuestas(ViewBag.Preguntas.IdPregunta);
-    ViewBag.puntaje = Juego._puntajeFinal;
-    return View("Juego");
+        ViewBag.username = Juego._username;
+        ViewBag.Respuestas = Juego.ObtenerProximasRespuestas(ViewBag.Preguntas.IdPregunta);
+        ViewBag.puntaje = Juego._puntajeFinal;
+        return View("Juego");
     }
 }
 
