@@ -49,7 +49,7 @@ text-align: center;
 {
   background:url(/img/ImagenLogoBackround.png);
   background-size:cover;
-  background-repeat: no-repeat;
+  background-repeat:no-repeat;
   backdrop-filter: blur(18px);
   height: 100vh;
 }
