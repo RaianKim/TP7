@@ -110,7 +110,7 @@ text-align: center;
   border-color: #17a2b8 !important;
 }
 .radioCJ {
-  -webkit-appearance: none;
+  -webkit-appearance: none;   
   -moz-appearance: none;
   appearance: none;
 }
