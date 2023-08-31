@@ -1,3 +1,4 @@
+
 html {
   font-size: 14px;
 }
@@ -74,12 +75,13 @@ text-align: center;
   background-color: rgb(247, 181, 161)!important;
   vertical-align: middle !important;
   transition-duration: 0.6s!important;
+  border-color: rosybrown !important;   
 }
 
 .botonesss:hover {
   background-color: rgb(253, 159, 130) !important; 
   color: white !important;
-  border-color: #17a2b8 !important;
+  border-color: rosybrown !important;
 }
 .BackP
 {
@@ -108,18 +110,18 @@ text-align: center;
 .botoness:hover {
   background-color: rgb(253, 159, 130) !important; 
   color: white !important;
-  border-color: #17a2b8 !important;
-}
-.radioCJ {
-  -webkit-appearance: none;   
-  -moz-appearance: none;
-  appearance: none;
+  border-color:rosybrown  !important;
 }
 
 
-.radioCJ:checked {
+input[type="radio"]:checked+label  {
   background-color: #ff3300 !important;
 }
+input[type="radio"]:checked+label {
+  background-color: #ff3300 !important;
+}
+
+
 
 input[type="radio"] {
   -webkit-appearance: none;
