@@ -15,38 +15,35 @@
                     <div class="text-center">
                         <div class="col">
                           <p class="BackP">Dificultad:</p>
-                            <div class="btn-group mb-3" data-toggle="buttons">
-                                  <label class="btn btn-primary btn-lg botonesss">
-                                  <input class="radioCJ" type="radio" name="dificultad" id="dificultad" value="-1" required>
+                            <div class="btn-group mb-3" data-toggle="button">
+                                  <label class="btn btn-warning btn-lg botones3 radio-label-cj">
+                                  <input class="cjradio" type="radio" name="dificultad" id="dificultad" value="-1" required>
                                    <p>Todas las dificultades</p>
                                   </label>
                             </div>
                                 @foreach (Dificultades dificultad in ViewBag.Dificultades)
                                 {
-                                  <div class="btn-group mb-3" data-toggle="buttons">
-
-                                      <label class="btn btn-primary btn-lg  botonesss radioCJ">
-                                        <input class="radioCJ" type="radio" name="dificultad"  id="dificultad" value="@dificultad.IdDificultad" required>
+                                  <div class="btn-group mb-3" data-toggle="button">
+                                      <label class="btn btn-warning btn-lg botones3 radio-label-cj">
+                                        <input class="cjradio" type="radio" name="dificultad"  id="dificultad" value="@dificultad.IdDificultad" required>
                                         <p>@dificultad.Nombre</p>
                                       </label>
                                  </div>  
                                 }
                         </div> 
                           <p class="BackP">Categoria:</p>
-                            <div class="btn btn-group " data-toggle="buttons">
-                              <div class="row radioCJ">
-                                    <label class="btn btn-primary btn-lg botoness">
-                                      <input class="radioCJ" type="radio" name="categoria" id="categoria" value="-1" required>
-                                        <p>Todas las categorias</p>
-                                    </label>
-                              </div>
+                            <div class="btn-group mb-3" data-toggle="button">
+                                  <label class="btn btn-warning btn-lg botones2 radio-label-cj2 " style="padding-top: 27.5%;">
+                                  <input class="cjradio2" type="radio" name="categoria" id="categoria" value="-1" required>
+                                   <p>Todas las dificultades</p>
+                                  </label>
                             </div>
                                 @foreach (Categorias categoria in ViewBag.Categorias)
                                 {
-                                 <div class="btn btn-group " data-toggle="buttons">
+                                 <div class="btn btn-group mb-3" data-toggle="button">
                                   <div class="row">
-                                      <label class="btn btn-primary btn-lg botonesss">
-                                      <input class="radioCJ" type="radio" name="categoria" id="categoria" value="@categoria.IdCategoria" required>
+                                      <label class="btn btn-warning btn-lg botones2 radio-label-cj2">
+                                      <input class="cjradio2" type="radio" name="categoria" id="categoria" value="@categoria.IdCategoria" required>
                                       <img src="@categoria.Foto" alt="">
                                       </label>
                                  </div>
@@ -63,7 +60,6 @@
             </div>
       </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="/js/site.js"></script>
   </body>
 </html>
-@*
-*@

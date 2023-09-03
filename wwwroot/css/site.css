@@ -44,22 +44,28 @@ text-align: center;
   display: flex;
   margin: 0 auto;
   justify-content: center;
-  width: 300px;
+  width: 75%;
+}
+.btn-jugar
+{
+  width: 15%;
 }
 .IndexBack
 {
   background:url(/img/ImagenLogoBackround.png);
   background-size:cover;
+  background-attachment: fixed;
   background-repeat:no-repeat;
+  background-position: center;
   backdrop-filter: blur(18px);
-  height: 100vh;
+  position: sticky;
 }
 
 .indexitems
 {
   display: flex;
   align-items: center;
-  height: 83vh;
+  height: 73vh;
   justify-content: center;
 }
 .indexcontainer
@@ -67,19 +73,17 @@ text-align: center;
   display: flex;
   justify-content: center;
 }
-.botonesss {
+.botones3 {
   width: auto !important;
   min-width: 300px !important;
   font-size: 18px !important;
   text-align: center !important;
-  background-color: rgb(247, 181, 161)!important;
-  vertical-align: middle !important;
-  transition-duration: 0.6s!important;
-  border-color: rosybrown !important;   
+  border-color: rosybrown !important;
+  vertical-align: middle;
 }
 
-.botonesss:hover {
-  background-color: rgb(253, 159, 130) !important; 
+.botones3:hover {
+  background-color: rgb(221, 65, 18) !important; 
   color: white !important;
   border-color: rosybrown !important;
 }
@@ -95,33 +99,20 @@ text-align: center;
   align-content: center!important;
   flex-direction: column!important;
 }
-.botoness {
+.botones2 {
   width: auto !important;
   min-width: 327.25px !important;
   min-height: 275px !important;
   font-size: 18px !important;
-  text-align: center !important;
   vertical-align: middle !important;
-  background-color: rgb(247, 181, 161)!important;
-  transition-duration: 0.6s!important;
-  border: rosybrown !important;
+  border-color: rosybrown !important;
 }
 
-.botoness:hover {
-  background-color: rgb(253, 159, 130) !important; 
+.botones2:hover {
+  background-color: rgb(221, 65, 18) !important; 
   color: white !important;
-  border-color:rosybrown  !important;
+  border-color: rosybrown !important;
 }
-
-
-input[type="radio"]:checked+label  {
-  background-color: #ff3300 !important;
-}
-input[type="radio"]:checked+label {
-  background-color: #ff3300 !important;
-}
-
-
 
 input[type="radio"] {
   -webkit-appearance: none;
@@ -129,15 +120,11 @@ input[type="radio"] {
   appearance: none;
 }
 
-.botonesss2 {
-  height: 200px !important;
-  width: 600px !important;
-
-
+.botones1 {
+  width: 100%;
+  padding-top: 5%;
+  padding-bottom: 5%;
   font-size: 18px !important;
   text-align: center !important;
-  background-color: rgb(247, 181, 161)!important;
-  vertical-align: middle !important;
-  transition-duration: 0.6s!important;
   border: rosybrown !important;
 }
