@@ -14,27 +14,34 @@
         <main role="main" class="pb-3">
             <div class="mb-5 d-flex justify-content-center flex-column align-items-center">
                 <div class="p-4">
-                    <h2 class="text-center">
+                        <h2 class="text-center">
                         @if ( ViewBag.Correcto.Correcta)
                             {
                                 ViewBag.respuestaCorrecta = "¡La respuesta es correcta!";
-                            }
-                            
+                            }  
                         else
                             {  
                                 ViewBag.respuestaCorrecta = "La respuesta es incorrecta"; 
                             }
-                        @ViewBag.respuestaCorrecta
+                            @ViewBag.respuestaCorrecta
                     </h2>
                 </div>
-                    @if(ViewBag.Correcto.Correcta)
-                    {
-                        <img class="mt-5" src="/img/Correcto.png" >
-                    }
-                    else
-                    {
-                        <img class="mt-5" src="/img/Equis.png">
-                    }
+                        @if(ViewBag.Correcto.Correcta)
+                        {
+                            <img class="mt-5" src="/img/Correcto.png" >
+                        }
+                        else
+                        {
+                            <img class="mt-5" src="/img/Equis.png">
+                                @for (int i = 0; i < ViewBag.RespuestasV.Count; i++)
+                                {
+                                    if(ViewBag.RespuestasV[i].Correcta == true)
+                                    {
+                                        <h3 class="text-center">Respuesta correcta: @ViewBag.RespuestasV[i].Contenido</h3>
+                                        break;
+                                    }
+                                }
+                        }
                 <div class="text-center">
                     <a href='@Url.Action("Jugar")' class="mt-5 btn btn-primary btn-lg">Continuar</a>
                 </div>

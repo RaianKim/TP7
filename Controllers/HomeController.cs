@@ -61,11 +61,10 @@ public IActionResult Jugar(){
 [HttpPost]
 public IActionResult VerificarRespuesta(int IdPregunta, int IdRespuesta)
 {
+    ViewBag.RespuestasV = Juego.ObtenerProximasRespuestas(IdPregunta);
     ViewBag.Correcto = Juego.VerificarRespuesta(IdPregunta,IdRespuesta);
     return View("Respuesta");
 }
-
-
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
 
     public IActionResult Error()
